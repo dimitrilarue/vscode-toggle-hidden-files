@@ -1,0 +1,75 @@
+{
+  "name": "vscode-toggle-hidden-files",
+  "displayName": "Toggle Hidden Files",
+  "description": "Toggle display of hidden files (dotfiles) in the explorer",
+  "version": "0.1.0",
+  "publisher": "dimitrilarue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitrilarue/vscode-toggle-hidden-files.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:toggle-hidden-files.toggle"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "toggle-hidden-files.toggle",
+        "title": "Toggle Hidden Files"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "toggle-hidden-files.toggle",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h"
+      }
+    ],
+    "configuration": {
+      "title": "Toggle Hidden Files",
+      "properties": {
+        "toggleHiddenFiles.hideByDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "Hide hidden files (dotfiles) by default when VS Code starts"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.126",
+    "@types/vscode": "^1.90.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.57.1",
+    "typescript": "^4.9.5"
+  },
+  "keywords": [
+    "vscode",
+    "hidden files",
+    "dotfiles",
+    "toggle",
+    "explorer",
+    "files"
+  ],
+  "author": "Dimitri Larue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimitrilarue/vscode-toggle-hidden-files/issues"
+  },
+  "homepage": "https://github.com/dimitrilarue/vscode-toggle-hidden-files#readme"
+}
