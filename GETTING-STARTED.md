@@ -42,12 +42,3 @@ This will create a .vsix file which can be installed in VS Code by:
 3. Clicking the "..." at the top of the Extensions view
 4. Selecting "Install from VSIX..."
 5. Navigating to and selecting your .vsix file
-
-## How It Works
-
-The extension works by modifying the `files.exclude` configuration in VS Code:
-
-- It adds a pattern `**/.??*` to hide dotfiles
-- It removes this pattern to show dotfiles
-- The pattern matches all files starting with a dot and having at least one character after the dot
-
